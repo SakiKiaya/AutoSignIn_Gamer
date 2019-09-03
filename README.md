@@ -8,3 +8,6 @@
 1. 請先安裝腳本管理器(Tampermonkey or Violentmonkey)
 2. 點選 AutoSignIn_Gamer.user.js > Raw 即可自動載入腳本
 3. 台灣巴哈姆特https://www.gamer.com.tw/
+
+# Reference
+1. JQuery定时自动消失提示框/弹出框 https://www.awaimai.com/1627.html
