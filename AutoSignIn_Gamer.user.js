@@ -40,7 +40,7 @@ var success_prompt = function(message, time)
         if(strCheck.search('達成') == -1)
         {
             console.log("[AutoSignIn] Do the Sign in");
-            Signin.showSigninMap(this);
+            document.querySelector("#signin-btn").click();
         }
         else
         {
