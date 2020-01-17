@@ -11,3 +11,8 @@
 
 # Reference
 1. JQuery定时自动消失提示框/弹出框 https://www.awaimai.com/1627.html
+
+# Update
+徽章入手證明
+
+![](https://raw.githubusercontent.com/SakiKiaya/AutoSignIn_Gamer/master/%E8%A8%BB%E8%A7%A3%202020-01-17%20211144.png)
