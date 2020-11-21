@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         AutoSignin_gamer
 // @namespace    http://tampermonkey.net/
-// @version      0.2
+// @version      0.3
 // @description  Auto Sign in gamer.com.tw
 // @author       You
 // @match        http*://www.gamer.com.tw/*
