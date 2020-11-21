@@ -36,16 +36,24 @@ var success_prompt = function(message, time)
 (function() {
     if(document.querySelector("#signin-btn") != null)
     {
-        var strCheck = document.querySelector("#signin-btn").innerText;
-        if(strCheck.search('達成') == -1)
+        var strCheck = "", objCheckbox;
+
+        objCheckbox = document.querySelector("#signin-btn > i");
+
+        if (objCheckbox != null)
         {
+            strCheck = objCheckbox.innerText;
+        }
+        if(strCheck.search('check_box') == -1)
+        {
+            console.log(strCheck);
             console.log("[AutoSignIn] Do the Sign in");
             document.querySelector("#signin-btn").click();
         }
         else
         {
             console.log("[AutoSignIn] Sign in done");
-            success_prompt("每日簽到已達成", 1500);
+            success_prompt("每日簽到已完成", 1500);
         }
     }
 })();
