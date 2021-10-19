@@ -1,12 +1,11 @@
 // ==UserScript==
 // @name         AutoSignin_gamer
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.4
 // @description  Auto Sign in gamer.com.tw
 // @author       You
 // @match        http*://www.gamer.com.tw/*
 // @grant        GM_addStyle
-// @require      http://code.jquery.com/jquery-3.4.1.min.js
 // ==/UserScript==
 
 GM_addStyle(`
@@ -36,24 +35,32 @@ var success_prompt = function(message, time)
 (function() {
     if(document.querySelector("#signin-btn") != null)
     {
-        var strCheck = "", objCheckbox;
+        setTimeout(function()
+        {
+            //Wait 0.5 sec and do this process
+            var strCheck = "", objCheckbox, objCheckIcon;
 
-        objCheckbox = document.querySelector("#signin-btn > i");
+            objCheckbox = document.querySelector("#signin-btn");
+            objCheckIcon = document.querySelector("#signin-btn > i");
 
-        if (objCheckbox != null)
-        {
-            strCheck = objCheckbox.innerText;
-        }
-        if(strCheck.search('check_box') == -1)
-        {
-            console.log(strCheck);
-            console.log("[AutoSignIn] Do the Sign in");
-            document.querySelector("#signin-btn").click();
-        }
-        else
-        {
-            console.log("[AutoSignIn] Sign in done");
-            success_prompt("每日簽到已完成", 1500);
-        }
+            if (objCheckbox != null)
+            {
+                strCheck = objCheckbox.innerText;
+                console.log(document.querySelector("#signin-btn").innerText);
+            }
+            if(strCheck.search("check_box") == -1 || objCheckIcon.innerText != 'check_box')
+            {
+                console.log(strCheck);
+                console.log(strCheck.search("check_box") == -1?"T":"F");
+                console.log(objCheckIcon.innerText != 'check_box'?"T":"F");
+                console.log("[AutoSignIn] Do the Sign in");
+                document.querySelector("#signin-btn").click();
+            }
+            else
+            {
+                console.log("[AutoSignIn] Sign in done");
+                success_prompt("每日簽到已完成", 1500);
+            }
+        }, 500);
     }
 })();
